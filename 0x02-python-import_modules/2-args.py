@@ -7,7 +7,7 @@ if len(sys.argv) - 1 == 1:
     print(len(sys.argv) - 1, "argument:")
 
 elif len(sys.argv) - 1 == 0:
-    print(len(sys.argv) - 1, "arguments")
+    print(len(sys.argv) - 1, "arguments.")
 
 elif len(sys.argv) - 1 > 1:
     print(len(sys.argv) - 1, "arguments:")

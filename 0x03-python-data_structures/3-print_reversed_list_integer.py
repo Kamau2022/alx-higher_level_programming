@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+def print_reversed_list_integer(my_list=[]):
+    """ this function prints integers in reverse
+    Args:
+        my_list: a list of integers
+    Returns:
+           nothing
+    """
+    b = len(my_list)
+    i = -1
+    while i >= -b:
+        print("{}" .format(my_list[i]))
+        i = i - 1

@@ -9,5 +9,5 @@ def print_reversed_list_integer(my_list=[]):
     b = len(my_list)
     i = -1
     while i >= -b:
-        print("{}" .format(my_list[i]))
+        print("{:d}" .format(my_list[i]))
         i = i - 1

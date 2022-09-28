@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
-    for i in a_dictionary:
-        k = i.pop("key", 'None')
-        if k == 'None':
-            return a_dictionary
-        else:
-            a_dictionary.pop("key")
-            return a_dictionary
+    if key in a_dictionary:
+        del a_dictionary['key']
+        return a_dictionary
+    elif key not in a_dictionary:
+        return a_dictionary

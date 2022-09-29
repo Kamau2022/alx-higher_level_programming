@@ -4,9 +4,12 @@ def print_reversed_list_integer(my_list=[]):
     Args:
         my_list: a list of integers
     """
-    b = len(my_list)
     i = -1
-    if b != 0:
+    k = None
+    if my_list == k:
+        return {}
+    elif my_list != k:
+        b = len(my_list)
         while i >= -b:
             print("{:d}" .format(my_list[i]))
             i = i - 1

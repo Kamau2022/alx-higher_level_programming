@@ -9,9 +9,9 @@ def search_replace(my_list, search, replace):
     Returns:
            new_element
     """
-    b = len(my_list) - 1
     new_list = my_list.copy()
     i = 0
+    b = len(new_list)
     for i in range(0, b):
         if new_list[i] == search:
             new_list[i] = replace

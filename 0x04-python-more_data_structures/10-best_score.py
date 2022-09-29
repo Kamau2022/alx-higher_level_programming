@@ -8,7 +8,9 @@ def best_score(a_dictionary):
           a key with the biggest integer value
     """
     if a_dictionary == k:
-        return k
+        return None
+    elif a_dictionary == {}:
+        return None
     else:
         k = max(a_dictionary, key=lambda k: a_dictionary[k])
         return k

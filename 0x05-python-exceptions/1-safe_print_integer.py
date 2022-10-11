@@ -7,14 +7,16 @@ def safe_print_integer(value):
         value: value to be printed
     Return: True or False
     """
-    
-    try:
-            print("{:d}" .format(value))
+    while True:
+        try:
+            print("{:d}".format(value), end='')
+        except TypeError:
+            return False
+        except ValueError:
+            return False
+        else:
+            print()
             return True
-    except TypeError:
-            return False
-    except ValueError:
-            return False
         
             
             

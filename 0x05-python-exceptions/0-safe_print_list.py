@@ -16,6 +16,6 @@ def safe_print_list(my_list=[], x=0):
             print("{:d}" .format(a[p]), end='')
             p = p + 1
         except IndexError:
-            break   
+            break
     print()
     return p

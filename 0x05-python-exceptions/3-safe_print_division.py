@@ -5,12 +5,14 @@ def safe_print_division(a, b):
     Args:
        a: first integer
        b: second integer
-    Returns: result
+    Returns: result or None
     """
     try:
         result = a / b
         return result
     except ZeroDivisionError:
         result = None
+    except TypeError:
+        result = None 
     finally:
         print("inside result: {}".format(result))

@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""a program to demonstrate a class
-"""
+"""a program to demonstrate a class"""
 class Square:
-    """an empty class that defines a square
-    """
+    """an empty class that defines a square"""
     pass

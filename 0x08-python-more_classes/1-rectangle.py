@@ -4,9 +4,9 @@
 
 class Rectangle:
     """a class that defines a rectangle"""
-    def __init__(self, width=0, height=0):
-        self.__height = height
-        self.__width = width
+    def __init__(self, __width=0, __height=0):
+        self.__height = __height
+        self.__width = __width
     #if not(isinstance(width, (int))):
      #   raise ValueError("width must be an integer")
     #if self.__width < 0: 

@@ -7,14 +7,15 @@ class Rectangle:
     def __init__(self, __width=0, __height=0):
         self.__height = __height
         self.__width = __width
-    #if not(isinstance(width, (int))):
-     #   raise ValueError("width must be an integer")
-    #if self.__width < 0: 
-     #   raise TypeError("width must be >= 0")
-   # if not(isinstance(self.__height, (int))):
-    #   raise ValueError("height must be an integer")
-   # if self.__height < 0:
-    #    raise ValueError("height must be an integer")  
+        if not(isinstance(self.__width, (int))):
+            raise ValueError("width must be an integer")
+        if self.__width < 0:
+            raise TypeError("width must be >= 0")
+        if not(isinstance(self.__height, (int))):
+            raise ValueError("height must be an integer")
+        if self.__height < 0:
+            raise ValueError("height must be an integer")
+
     @property
     def width(self):
         """a function that retrieves width"""

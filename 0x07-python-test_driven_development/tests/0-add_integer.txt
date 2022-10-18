@@ -1,0 +1,57 @@
+"""The 0-add_integer module
+Function to be tested: add_integer()
+"""
+>>> import sys
+>>> sys.path.append('/root/alx-higher_level_programming/0x07-python-test_driven_development')
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(45, 5)
+50
+
+>>> add_integer(45, -5)
+40
+
+>>> add_integer(-45, -5)
+-50
+
+>>> add_integer(34.6, 23.9)
+57
+
+>>> add_integer(-34.6, 23.6)
+-11
+
+>>> add_integer(-34.6, -23.6)
+-57
+
+>>> add_integer(45, "ben")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("ben", 45)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(45, [2 ,3])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer([2, 3], 45)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(3, (3, 4))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(False, 3)
+3
+
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'

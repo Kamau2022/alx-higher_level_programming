@@ -21,7 +21,7 @@ class Rectangle:
         k = int(str(self.__width))  
         s = k * '#'
         if p == 0 or k == 0:
-            return '#'
+            return '' 
         for i in range(p - 1):
             print(s)
         return s

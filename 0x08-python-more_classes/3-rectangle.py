@@ -18,10 +18,10 @@ class Rectangle:
 
     def __str__(self):
         p = int(str(self.__height))
-        k = int(str(self.__width))  
+        k = int(str(self.__width))
         s = k * '#'
         if p == 0 or k == 0:
-            return '' 
+            return ''
         for i in range(p - 1):
             print(s)
         return s

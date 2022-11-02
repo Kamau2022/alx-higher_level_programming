@@ -44,10 +44,10 @@ class TestRectangle(unittest.TestCase):
     def test_init_values(self):
         """a function to test id values
         """
-        self.assertEqual(self.r1.id, 3)
-        self.assertEqual(self.r2.id, 4)
-        self.assertEqual(self.r3.id, 5)
-        self.assertEqual(self.r4.id, 6)
+        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r3.id, 3)
+        self.assertEqual(self.r4.id, 4)
         self.assertEqual(self.r5.id, 77)
 
     def test_width_values(self):
@@ -187,7 +187,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             a = Rectangle(-1, 4)   
    
-    def test_display():
+    def test_display(self):
         """a function to test the display method
         """
         j = io.StringIO()

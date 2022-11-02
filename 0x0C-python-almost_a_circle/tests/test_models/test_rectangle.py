@@ -3,6 +3,8 @@
 
 import unittest
 import sys
+import io
+import contextlib
 import inspect
 from models.rectangle import Rectangle
 from models.base import Base
@@ -15,7 +17,6 @@ class TestRectangle(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Creating a set up environment for testing
-           documentation
         """
         cls.r1 = Rectangle(2, 10)
         cls.r2 = Rectangle(2, 4)
@@ -166,3 +167,40 @@ class TestRectangle(unittest.TestCase):
             p = Rectangle(None)
         with self.assertRaises(TypeError):
             p = Rectangle(1, 2, 3, 4, 5, 6)
+
+    def test_area(self):
+       """a function to test values for area 
+       """
+       self.assertEqual((self.r1.width * self.r1.height), 20)
+       self.assertEqual((self.r2.width * self.r2.height), 8)
+       self.assertEqual((self.r3.width * self.r3.height), 42)
+       self.assertEqual((self.r4.width * self.r4.height), 42)
+       self.assertEqual((self.r5.width * self.r5.height), 18)
+
+    def test_area_errors(self):
+        """a function to test errors i finding area
+        """
+        with self.assertRaises(TypeError):
+            a = Rectangle()
+        with self.assertRaises(TypeError):
+            a = Rectangle(1)
+        with self.assertRaises(ValueError):
+            a = Rectangle(-1, 4)   
+   
+    def test_display():
+        """a function to test the display method
+        """
+        j = io.StringIO()
+        with contextlib.redirect_stdout(j):
+            self.r2.display()
+        k = j.getvalue()
+        self.assertEqual(k, "##\n##\n##\n##\n")
+
+
+
+
+
+
+
+
+

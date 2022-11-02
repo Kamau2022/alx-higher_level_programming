@@ -9,27 +9,10 @@ class Rectangle(Base):
         """a class constructor
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-
-        if not(isinstance(self.__width, (int))):
-            raise TypeError("width must be an integer")
-        if self.__width <= 0:
-            raise ValueError("width must be > 0")
-        if not(isinstance(self.__height, (int))):
-            raise TypeError("height must be an integer")
-        if self.__height <= 0:
-            raise ValueError("height must be > 0")
-        if not(isinstance(self.__y, (int))):
-            raise TypeError("y must be an integer")
-        if self.__y < 0:
-            raise ValueError("y must be >= 0")
-        if not(isinstance(self.__x, (int))):
-            raise TypeError("x must be an integer")
-        if self.__x < 0:
-            raise ValueError("x must be >= 0")
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -47,7 +30,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
-            self.__width = width
+        self.__width = width
 
     @property
     def height(self):
@@ -65,7 +48,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
-            self.__height = height
+        self.__height = height
 
     @property
     def x(self):
@@ -83,7 +66,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
-            self.__x = x
+        self.__x = x
 
     @property
     def y(self):
@@ -101,7 +84,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
-            self.__y = y
+        self.__y = y
 
     def area(self):
         """a function that returns the area value of the Rectangle instance
@@ -117,5 +100,3 @@ class Rectangle(Base):
             for i in range(self.__width):
                 print('#', end='')
             print()
-        
-        

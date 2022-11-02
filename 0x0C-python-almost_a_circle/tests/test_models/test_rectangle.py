@@ -196,7 +196,12 @@ class TestRectangle(unittest.TestCase):
         k = j.getvalue()
         self.assertEqual(k, "##\n##\n##\n##\n")
 
-
+    def test_str_method(self):
+        """a function to test the __str__ method
+        """
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual("[Rectangle] (5) 3/4 - 1/2", str(r))
+         
 
 
 

@@ -23,6 +23,8 @@ class TestRectangle(unittest.TestCase):
         cls.r3 = Rectangle(6, 7, 8)
         cls.r4 = Rectangle(6, 7, 8, 9)
         cls.r5 = Rectangle(2, 9, 0, 43, 77)
+        cls.r6 = Rectangle(2, 3, 2, 2)
+        cls.r7 = Rectangle(3, 2, 1, 0)
         cls.setup = inspect.getmembers(Rectangle, inspect.isfunction)
 
     def test_module_docstring(self):
@@ -187,7 +189,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             a = Rectangle(-1, 4)   
    
-    def test_display(self):
+    def test_1_display(self):
         """a function to test the display method
         """
         j = io.StringIO()
@@ -196,12 +198,33 @@ class TestRectangle(unittest.TestCase):
         k = j.getvalue()
         self.assertEqual(k, "##\n##\n##\n##\n")
 
+    def test_2_display(self):
+        """a function to test the display method
+        """
+        j = io.StringIO()
+        with contextlib.redirect_stdout(j):
+            self.r7.display()
+        k = j.getvalue()
+        self.assertEqual(k, " ###\n ###\n")
+    
+    def test_1_update_display(self):
+        """a function to update the display method
+        """
+        j = io.StringIO()
+        with contextlib.redirect_stdout(j):
+            self.r6.display()
+        l = self.r6.y * '\n'
+        k = j.getvalue()
+        self.assertEqual(k, "\n\n  ##\n  ##\n  ##\n")
+
     def test_str_method(self):
         """a function to test the __str__ method
         """
-        r = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual("[Rectangle] (5) 3/4 - 1/2", str(r))
-         
+        self.assertEqual("[Rectangle] (1) 0/0 - 2/10", str(self.r1))
+        self.assertEqual("[Rectangle] (2) 0/0 - 2/4", str(self.r2))
+        self.assertEqual("[Rectangle] (3) 8/0 - 6/7", str(self.r3))
+        self.assertEqual("[Rectangle] (4) 8/9 - 6/7", str(self.r4))
+        self.assertEqual("[Rectangle] (77) 0/43 - 2/9", str(self.r5))
 
 
 

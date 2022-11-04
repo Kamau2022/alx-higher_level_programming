@@ -93,12 +93,12 @@ class Rectangle(Base):
         return A
 
     def display(self):
-        """ a function that prints in stdout the 
-            Rectangle instance with the character # 
+        """ a function that prints in stdout the
+            Rectangle instance with the character #
         """
-        k = '' 
+        k = ''
         for i in range(self.y):
-            print (k)
+            print(k)
         for i in range(self.height):
             for i in range(self.x):
                 print(f'{k:1}', end='')
@@ -107,8 +107,27 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """a function that returns [Rectangle] 
+        """a function that returns [Rectangle]
            (<id>) <x>/<y> - <width>/<height>
         """
-        k = (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        k = (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+             f"- {self.width}/{self.height}")
         return k
+
+    def update(self, *args, **kwargs):
+        """a function to update the class
+        Args:
+            *args: number of arguments
+            **kwargs: a double pointer to a dictionary
+        """
+        a = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            for j in range(len(a)):
+                if a[i] == a[j]:
+                    setattr(self, a[i], args[i])
+        i = 0
+        if not args or len(args) == 0:
+            for key, val in kwargs.items():
+                for i in range(len(a)):
+                    if key == a[i]:
+                        setattr(self, a[i], val)

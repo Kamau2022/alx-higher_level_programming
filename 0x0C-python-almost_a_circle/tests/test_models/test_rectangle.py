@@ -46,10 +46,10 @@ class TestRectangle(unittest.TestCase):
     def test_init_values(self):
         """a function to test id values
         """
-        self.assertEqual(self.r1.id, 1)
-        self.assertEqual(self.r2.id, 2)
-        self.assertEqual(self.r3.id, 3)
-        self.assertEqual(self.r4.id, 4)
+        self.assertEqual(self.r1.id, 3)
+        self.assertEqual(self.r2.id, 4)
+        self.assertEqual(self.r3.id, 5)
+        self.assertEqual(self.r4.id, 6)
         self.assertEqual(self.r5.id, 77)
 
     def test_width_values(self):
@@ -171,13 +171,13 @@ class TestRectangle(unittest.TestCase):
             p = Rectangle(1, 2, 3, 4, 5, 6)
 
     def test_area(self):
-       """a function to test values for area 
-       """
-       self.assertEqual((self.r1.width * self.r1.height), 20)
-       self.assertEqual((self.r2.width * self.r2.height), 8)
-       self.assertEqual((self.r3.width * self.r3.height), 42)
-       self.assertEqual((self.r4.width * self.r4.height), 42)
-       self.assertEqual((self.r5.width * self.r5.height), 18)
+        """a function to test values for area
+        """
+        self.assertEqual((self.r1.width * self.r1.height), 20)
+        self.assertEqual((self.r2.width * self.r2.height), 8)
+        self.assertEqual((self.r3.width * self.r3.height), 42)
+        self.assertEqual((self.r4.width * self.r4.height), 42)
+        self.assertEqual((self.r5.width * self.r5.height), 18)
 
     def test_area_errors(self):
         """a function to test errors i finding area
@@ -187,8 +187,8 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             a = Rectangle(1)
         with self.assertRaises(ValueError):
-            a = Rectangle(-1, 4)   
-   
+            a = Rectangle(-1, 4)
+
     def test_1_display(self):
         """a function to test the display method
         """
@@ -206,29 +206,21 @@ class TestRectangle(unittest.TestCase):
             self.r7.display()
         k = j.getvalue()
         self.assertEqual(k, " ###\n ###\n")
-    
+
     def test_1_update_display(self):
         """a function to update the display method
         """
         j = io.StringIO()
         with contextlib.redirect_stdout(j):
             self.r6.display()
-        l = self.r6.y * '\n'
         k = j.getvalue()
         self.assertEqual(k, "\n\n  ##\n  ##\n  ##\n")
 
     def test_str_method(self):
         """a function to test the __str__ method
         """
-        self.assertEqual("[Rectangle] (1) 0/0 - 2/10", str(self.r1))
-        self.assertEqual("[Rectangle] (2) 0/0 - 2/4", str(self.r2))
-        self.assertEqual("[Rectangle] (3) 8/0 - 6/7", str(self.r3))
-        self.assertEqual("[Rectangle] (4) 8/9 - 6/7", str(self.r4))
+        self.assertEqual("[Rectangle] (3) 0/0 - 2/10", str(self.r1))
+        self.assertEqual("[Rectangle] (4) 0/0 - 2/4", str(self.r2))
+        self.assertEqual("[Rectangle] (5) 8/0 - 6/7", str(self.r3))
+        self.assertEqual("[Rectangle] (6) 8/9 - 6/7", str(self.r4))
         self.assertEqual("[Rectangle] (77) 0/43 - 2/9", str(self.r5))
-
-
-
-
-
-
-

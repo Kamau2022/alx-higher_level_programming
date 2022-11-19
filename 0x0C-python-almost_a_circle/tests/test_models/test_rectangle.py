@@ -180,7 +180,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual((self.r5.width * self.r5.height), 18)
 
     def test_area_errors(self):
-        """a function to test errors i finding area
+        """a function to test errors in finding area
         """
         with self.assertRaises(TypeError):
             a = Rectangle()
@@ -224,3 +224,36 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual("[Rectangle] (5) 8/0 - 6/7", str(self.r3))
         self.assertEqual("[Rectangle] (6) 8/9 - 6/7", str(self.r4))
         self.assertEqual("[Rectangle] (77) 0/43 - 2/9", str(self.r5))
+
+    def test_update_args(self):
+        """a function to test a list of arguments:*args
+        """
+        r = Rectangle(12, 2, 8, 9, 15)
+        r.update(43, 42, 41, 40, 39)
+        self.assertEqual(r.width, 42)
+        self.assertEqual(r.height, 41)
+        self.assertEqual(r.x, 40)
+        self.assertEqual(r.y, 39)
+        self.assertEqual(r.id, 43)
+
+    def test_update_kwargs(self):
+        """a function to test a keyworded arguments:**kwargs
+        """
+        r = Rectangle(12, 2, 8, 9, 15)
+        r.update(id=43, width=42, height=41, x=40, y=39)
+        self.assertEqual(r.width, 42)
+        self.assertEqual(r.height, 41)
+        self.assertEqual(r.x, 40)
+        self.assertEqual(r.y, 39)
+        self.assertEqual(r.id, 43)
+
+    def test_to_dictionary(self):
+        """test for the dictionary method
+        """
+        r = Rectangle(40, 50, 60, 70, 80)
+        r_dict = r.to_dictionary()
+        self.assertEqual(r_dict['width'], 40)
+        self.assertEqual(r_dict['height'], 50)
+        self.assertEqual(r_dict['x'], 60)
+        self.assertEqual(r_dict['y'], 70)
+        self.assertEqual(r_dict['id'], 80)

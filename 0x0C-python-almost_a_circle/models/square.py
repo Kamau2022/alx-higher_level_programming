@@ -18,15 +18,15 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """a function that sets value of size
         """
-        if not(isinstance(value, int)):
+        if not(isinstance(size, int)):
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if size <= 0:
             raise ValueError("width must be > 0")
-        self.width = value
-        self.height = value
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """a method that assigns attributes

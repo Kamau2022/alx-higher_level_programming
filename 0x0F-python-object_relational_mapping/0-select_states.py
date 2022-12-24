@@ -3,7 +3,7 @@
 """
 if __name__ == "__main__":
     import MySQLdb
-    db = MySQLdb.connect(host="localhost", port=3307, password="kamau2368",
+    db = MySQLdb.connect(host="localhost", port=3306, password="kamau2368",
                          user="root", database="hbtn_0e_0_usa")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states")

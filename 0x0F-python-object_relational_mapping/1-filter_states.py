@@ -8,7 +8,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, password=argv[1],
                          user=argv[2], database=argv[3])
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'")
     for row in cursor.fetchall():
         print('{}'.format(row))
     cursor.close()

@@ -3,19 +3,21 @@
     in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 
-def getStates(userName, passWord, dbName, statename):
+if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    db = MySQLdb.connect(host="localhost", port=3306, password=password,
-                         user=user, database=data)
+    if len(argv) != 5:
+        print("Usage: {} username password database_name".format(argsv[0]))
+        exit(1)
+    username = "root"
+    password = "kamau2368"
+    data = argv[3]
+    statename = argv[4]
+    db = MySQLdb.connect(host="localhost", port=3306, password=argv[1],
+                         user=argv[2], database=argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'".format(statename))
     for row in cursor.fetchall():
         print('{}'.format(row))
     cursor.close()
     db.close()
-if __name__ == "__main__":
-    """ Take in arguments and passes to get states from db """
-    from sys import argv
-
-    getStates(argv[1], argv[2], argv[3], argv[4])

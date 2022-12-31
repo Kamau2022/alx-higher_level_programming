@@ -6,9 +6,6 @@
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    username = "root"
-    password = "kamau2368"
-    data = argv[3]
     statename = argv[4]
     db = MySQLdb.connect(host="localhost", port=3306, password=argv[1],
                          user=argv[2], database=argv[3])

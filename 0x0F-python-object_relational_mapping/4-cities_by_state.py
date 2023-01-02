@@ -8,8 +8,8 @@ if __name__ == "__main__":
                          user="root", database="hbtn_0e_4_usa")
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name\
-                    FROM cities INNER JOIN states\
-                    ON states.id = cities.state_id\
+                    FROM cities RIGHT JOIN states\
+                    ON cities.state_id = states.id\
                     ORDER by cities.id")
     for row in cursor.fetchall():
         print('{}'.format(row))

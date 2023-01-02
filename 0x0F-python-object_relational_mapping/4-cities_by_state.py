@@ -8,7 +8,7 @@ if __name__ == "__main__":
                          user=argv[2], database=argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name\
-                    FROM cities RIGHT JOIN states\
+                    FROM cities LEFT JOIN states\
                     ON cities.state_id = states.id\
                     ORDER by cities.id")
     for row in cursor.fetchall():

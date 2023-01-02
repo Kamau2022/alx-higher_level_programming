@@ -9,7 +9,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name\
                     FROM cities LEFT JOIN states\
-                    ON cities.state_id = states.id\
+                    ON states.id = cities.state_id\
                     ORDER by cities.id")
     for row in cursor.fetchall():
         print('{}'.format(row))

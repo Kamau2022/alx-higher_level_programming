@@ -4,12 +4,12 @@
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    db = MySQLdb.connect(host="localhost", port=3306, password="kamau2368",
-                         user="root", database="hbtn_0e_4_usa")
+    db = MySQLdb.connect(host="localhost", port=3306, password=argv[1],
+                         user=argv[2], database=argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name\
-                    FROM cities INNER JOIN states\
-                    ON cities.state_id = states.id\
+                    FROM cities RIGHT JOIN states\
+                    ON states.id = cities.state_id\
                     ORDER by cities.id")
     for row in cursor.fetchall():
         print('{}'.format(row))

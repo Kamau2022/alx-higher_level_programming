@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""a module that lists all states with a name starting with N
+   from the database hbtn_0e_0_usa
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base

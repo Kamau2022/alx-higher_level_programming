@@ -2,6 +2,7 @@
 """a module that lists all states with a name starting with N
    from the database hbtn_0e_0_usa
 """
+if __name__ == "__main__":
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import (create_engine)

@@ -15,3 +15,4 @@ if __name__ == "__main__":
     session = factory()
     for state in session.query(State).filter_by(State.id):
         print("{}:{}".format(state.id, state.name))
+    session.close()

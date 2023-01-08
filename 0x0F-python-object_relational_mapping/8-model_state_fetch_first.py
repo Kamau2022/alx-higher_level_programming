@@ -16,5 +16,5 @@ if __name__ == "__main__":
     state = session.query(State).order_by(State.id).first()
     if state.id == 1:
         print('{}: {}'.format(state.id, state.name))
-    if state == '':
+    if State == '':
         print()

@@ -14,7 +14,7 @@ if __name__ == "__main__":
     factory = sessionmaker(bind=engine)
     session = factory()
     state = session.query(State).order_by(State.id).first()
-    if state.id == 1:
+    if state is not None:
         print('{}: {}'.format(state.id, state.name))
-    if State is None:
+    else:
         print('Nothing')

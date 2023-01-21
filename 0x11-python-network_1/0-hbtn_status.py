@@ -8,7 +8,7 @@ if __name__ == "__main__":
         data = response.read()
         encoding = response.info().get_content_charset()
         html = data.decode(encoding)
-        print("Body response")
+        print("Body response:")
         print("\t- type: {}".format(type(data)))
         print("\t- content: {} ".format(data))
         print("\t- utf8 content: {}".format(html))

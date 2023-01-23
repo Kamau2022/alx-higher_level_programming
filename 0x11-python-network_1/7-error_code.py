@@ -10,4 +10,4 @@ if __name__ == "__main__":
         print("Error code: ", end='')
         print(r.status_code)
     else:
-        print("Index")
+        print(r.text)

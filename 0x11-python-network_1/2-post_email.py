@@ -5,9 +5,11 @@
    (decoded in utf-8)
 """
 import urllib.request
+import urllib.parse
 import sys
 if __name__ == "__main__":
-    email = sys.argv[2].encode('utf-8')
+    email = urllib.parse.urlencode({'email': sys.argv[2]})
+    email = email.encode('ascii')
     with urllib.request.urlopen(sys.argv[1], email) as response:
-        data = response.read().decode('utf-8')
-        print(data)
+        html = response.read()
+        print(html.decode('utf-8'))

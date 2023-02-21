@@ -1,3 +1,3 @@
-$('div').on("click", function () {
-$( "header" ).addClass( "red");
+$('div').on$(("click", function () {
+ "header" ).addClass( "red");
 });

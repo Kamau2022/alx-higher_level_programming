@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""a function to find the peak element"""
+"""a module to find the peak element"""
 
 
 def find_peak(list_of_integers):
+    """a function to find the peak element"""
     length = len(list_of_integers)
     start = 0
     end = l - 1

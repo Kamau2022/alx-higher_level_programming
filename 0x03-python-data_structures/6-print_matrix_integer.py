@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    x = '\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in matrix])
-    return x
+    """a function to print a formatted matrix"""
+    result = ('\n'.join([''.join(['{:3}'.format(item) for item in row])
+              for row in matrix]))
+    print(result)
